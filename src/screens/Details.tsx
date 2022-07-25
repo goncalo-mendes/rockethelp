@@ -101,44 +101,44 @@ export function Details() {
         >
           {order.status === 'closed' ? 'Finalizado' : 'Em andamento'}
         </Text>
-        <ScrollView mx={5} showsVerticalScrollIndicator={false}>
-          <CardDetails
-            title="Equipamento"
-            description={`Patrimonio ${order.patrimony}`}
-            icon={DesktopTower}
-          />
-          <CardDetails
-            title="Descrição"
-            description={`${order.description}`}
-            icon={Clipboard}
-            footer={order.when}
-          />
-          <CardDetails
-            title="Solução"
-            description={order.solution}
-            icon={CircleWavyCheck}
-            footer={order.closed && `Encerrado em ${order.closed}`}
-          >
-            {
-              order.status == 'open' &&
-              <Input
-                placeholder="Descrição da solução"
-                onChangeText={setSolution}
-                h={24}
-                textAlignVertical="top"
-                multiline
-              />
-            }
-          </CardDetails>
-        </ScrollView>
-        {
-          !order.closed &&
-          <Button title="Finalizar"
-            m={5}
-            onPress={handleOrderClosed}
-          />
-        }
       </HStack>
+      <ScrollView mx={5} showsVerticalScrollIndicator={false}>
+        <CardDetails
+          title="Equipamento"
+          description={`Patrimonio ${order.patrimony}`}
+          icon={DesktopTower}
+        />
+        <CardDetails
+          title="Descrição"
+          description={`${order.description}`}
+          icon={Clipboard}
+          footer={order.when}
+        />
+        <CardDetails
+          title="Solução"
+          description={order.solution}
+          icon={CircleWavyCheck}
+          footer={order.closed && `Encerrado em ${order.closed}`}
+        >
+          {
+            order.status == 'open' &&
+            <Input
+              placeholder="Descrição da solução"
+              onChangeText={setSolution}
+              h={24}
+              textAlignVertical="top"
+              multiline
+            />
+          }
+        </CardDetails>
+      </ScrollView>
+      {
+        !order.closed &&
+        <Button title="Finalizar"
+          m={5}
+          onPress={handleOrderClosed}
+        />
+      }
     </VStack>
   );
 }

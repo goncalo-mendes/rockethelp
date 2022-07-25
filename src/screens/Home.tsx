@@ -16,7 +16,7 @@ import firestore from '@react-native-firebase/firestore'
 import { dateFormat } from '../utils/fireStoreDateFormat'
 
 export function Home() {
-  const [isLoading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open')
   const [orders, setOrders] = useState<OrderProps[]>([])
 
@@ -39,7 +39,7 @@ export function Home() {
   }
 
   useEffect(() => {
-    setLoading(true)
+    setIsLoading(true)
     const subscriber = firestore()
       .collection('orders')
       .where('status', '==', statusSelected)
@@ -55,7 +55,7 @@ export function Home() {
           }
         })
         setOrders(data)
-        setLoading(false)
+        setIsLoading(false)
       })
     return subscriber
   }, [statusSelected])
