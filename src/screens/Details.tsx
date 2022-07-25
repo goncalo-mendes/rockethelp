@@ -18,7 +18,7 @@ type RoutParams = {
 }
 
 type OrderDetails = OrderProps & {
-  description: string,
+  descriptions: string,
   solution: string,
   closed: string,
 }
@@ -63,12 +63,12 @@ export function Details() {
       .doc(orderId)
       .get()
       .then((doc) => {
-        const { patrimony, description, status, created_at, closed_at, solution } = doc.data();
+        const { patrimony, descriptions, status, created_at, closed_at, solution } = doc.data();
         const closed = closed_at ? dateFormat(closed_at) : null
         setOrder({
           id: doc.id,
           patrimony,
-          description,
+          descriptions,
           status,
           solution,
           when: dateFormat(created_at),
@@ -84,8 +84,8 @@ export function Details() {
 
   return (
     <VStack flex={1} bg="gray.700">
-      <Box px={6} bg="gray.600">
-        <Header title="solição" />
+      <Box px={5} bg="gray.600">
+        <Header title="Solicitação" titlePaddingRight="9" />
       </Box>
       <HStack bg="gray.500" justifyContent="center" p={4}>
         {
@@ -110,7 +110,7 @@ export function Details() {
         />
         <CardDetails
           title="Descrição"
-          description={`${order.description}`}
+          description={`${order.descriptions}`}
           icon={Clipboard}
           footer={order.when}
         />

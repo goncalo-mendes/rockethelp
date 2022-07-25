@@ -2,7 +2,7 @@ import firestore, { FirebaseFirestoreTypes } from '@react-native-firebase/firest
 
 export type OrderFirestoreDto = {
   patrimony: string;
-  description: string;
+  descriptions: string;
   status: 'open' | 'closed';
   solution?: string;
   created_at: FirebaseFirestoreTypes.Timestamp;
