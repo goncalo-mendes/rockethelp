@@ -7,6 +7,6 @@ export function dateFormat(timestamp: FirebaseFirestoreTypes.Timestamp) {
     const day = date.toLocaleDateString('pt-PT');
     const hour = date.toLocaleTimeString('pt-PT');
 
-    return `${day} ás ${hour}`
+    return `${day} ás ${hour}`;
   }
 }

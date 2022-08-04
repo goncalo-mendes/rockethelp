@@ -12,22 +12,17 @@ export function Routes() {
   const [user, setUser] = useState<FirebaseAuthTypes.User>();
 
   useEffect(() => {
-    const subscriber = auth()
-      .onAuthStateChanged(response => {
-        setUser(response);
-        setIsLoading(false);
-      });
+    const subscriber = auth().onAuthStateChanged((response) => {
+      setUser(response);
+      setIsLoading(false);
+    });
 
     return subscriber;
   }, []);
 
   if (loading) {
-    return <Loading />
+    return <Loading />;
   }
 
-  return (
-    <NavigationContainer>
-      {user ? <AppRoutes /> : <SignIn />}
-    </NavigationContainer>
-  )
+  return <NavigationContainer>{user ? <AppRoutes /> : <SignIn />}</NavigationContainer>;
 }

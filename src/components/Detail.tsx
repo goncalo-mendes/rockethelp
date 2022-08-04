@@ -1,15 +1,16 @@
-import { VStack, Heading } from "native-base";
+import { VStack, Heading } from 'native-base';
 
 type Props = {
-  title
-}
-
+  title;
+};
 
 export function Detail({ title, ...rest }: Props) {
   return (
     <VStack>
-      <Heading color="white" fontSize="sm"> {title} </Heading>
+      <Heading color="white" fontSize="sm">
+        {' '}
+        {title}{' '}
+      </Heading>
     </VStack>
   );
 }
-

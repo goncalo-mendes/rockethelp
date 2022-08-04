@@ -1,6 +1,6 @@
-import { VStack, HStack, useTheme, Text, Box } from "native-base"
-import { IconProps } from 'phosphor-react-native'
-import { ReactNode } from "react"
+import { VStack, HStack, useTheme, Text, Box } from 'native-base';
+import { IconProps } from 'phosphor-react-native';
+import { ReactNode } from 'react';
 
 type Props = {
   title: string;
@@ -8,17 +8,10 @@ type Props = {
   footer?: string;
   icon: React.ElementType<IconProps>;
   children?: ReactNode;
-}
+};
 
-
-export function CardDetails({
-  title,
-  description,
-  footer = null,
-  icon: Icon,
-  children
-}: Props) {
-  const { colors } = useTheme()
+export function CardDetails({ title, description, footer = null, icon: Icon, children }: Props) {
+  const { colors } = useTheme();
 
   return (
     <VStack bg="gray.600" p={5} mt={5} rounded="sm">
@@ -28,16 +21,20 @@ export function CardDetails({
           {title}
         </Text>
       </HStack>
-      {!!description &&
-        <Text color="gray.100" fontSize="sm"> {description}</Text>
-      }
+      {!!description && (
+        <Text color="gray.100" fontSize="sm">
+          {' '}
+          {description}
+        </Text>
+      )}
       {children}
-      {!!footer &&
+      {!!footer && (
         <Box borderTopWidth={1} borderTopColor="gray.400" mt={3}>
           <Text mt={3} color="gray.300" fontSize="sm">
             {footer}
           </Text>
-        </Box>}
+        </Box>
+      )}
     </VStack>
-  )
+  );
 }

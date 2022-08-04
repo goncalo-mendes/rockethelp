@@ -1,5 +1,7 @@
 # Rockethelp
+
 ## Project
+
 The application to manage equipment maintenance and support requests in real time.
 
 ## Stack
@@ -21,5 +23,3 @@ The application to manage equipment maintenance and support requests in real tim
     Close request with solution
     Real-time database synchronization
     Among others...
-
-

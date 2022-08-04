@@ -1,4 +1,4 @@
-import firestore, { FirebaseFirestoreTypes } from '@react-native-firebase/firestore'
+import firestore, { FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
 
 export type OrderFirestoreDto = {
   patrimony: string;
@@ -7,5 +7,4 @@ export type OrderFirestoreDto = {
   solution?: string;
   created_at: FirebaseFirestoreTypes.Timestamp;
   closed_at?: FirebaseFirestoreTypes.Timestamp;
-
-}
+};
